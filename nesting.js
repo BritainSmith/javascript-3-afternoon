@@ -50,15 +50,17 @@ var employees = [
     3. Return the updated employee array.
 */
 
-var employeeUpdater = function() {
-  for (var key in employees)
-    if (employees[key] === "Theo") {
-      delete employees.firstName.lastName;
-    } else if (employees[key] === "Lorie") {
-      employees.department = "HR";
+function employeeUpdater() {
+  for (i = 0; i < employees.length; i++) {
+    let emp = employees[i];
+    if (emp.firstName == "Theo") {
+      employees.splice(i, 1);
+    } else if (emp.firstName == "Lorie") {
+      emp.department = "HR";
     }
+  }
   return employees;
-};
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -74,7 +76,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+var removeDuplicates = function() {
+  for (i = 0; i < workplaceAccidents.length; i++) {
+    let accident = workplaceAccidents[i];
+    for (j = i + 1; j < workplaceAccidents.length; j++) {
+      if (accident === workplaceAccidents[i]) {
+        workplaceAccidents.splice(j, 1);
+      }
+    }
+  }
+  return workplaceAccidents;
+};
 
 ////////// PROBLEM 3 //////////
 
@@ -101,8 +113,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 ////////// PROBLEM 4 //////////
 
@@ -157,4 +169,16 @@ var numsArr = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+var looper = function() {
+  for (i = 0; i < numsArr.length; i++) {
+    let subArray = numsArr[i];
+    for (j = 0; j < subArray.length; j++) {
+      if (subArray[j] % 2 == 0) {
+        subArray[j] = "even";
+      } else {
+        subArray[j] = "odd";
+      }
+    }
+  }
+  return numsArr;
+};

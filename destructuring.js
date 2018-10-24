@@ -107,3 +107,12 @@ var numberGroups = function(obj) {
     return c;
   }
 };
+
+
+<nav></nav>
+<NavBar></NavBar>
+
+<Switch>
+  <Route path="/home"component={Home} />
+  
+</Switch>
